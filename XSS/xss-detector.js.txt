@@ -1,0 +1,64 @@
+// xss-detector.js
+
+(function() {
+  'use strict';
+
+  // Define patterns commonly associated with XSS attacks
+  const suspiciousPatterns = [
+    /<script.*?>.*?<\/script>/gi,
+    /javascript:/gi,
+    /on\w+\s*=/gi,
+    /eval\((.*?)\)/gi,
+    /document\.cookie/gi,
+    /document\.location/gi,
+    /window\.location/gi,
+    /<.*?on\w+\s*=.*?>/gi
+  ];
+
+  // Function to check if input contains any suspicious patterns
+  function isSuspicious(input) {
+    for (let pattern of suspiciousPatterns) {
+      if (pattern.test(input)) {
+        console.debug(`Suspicious pattern detected: ${pattern}`);
+        return true;
+      }
+    }
+    return false;
+  }
+
+  // Monitor DOM mutations to detect added nodes with potential XSS content
+  const observer = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
+      if (mutation.addedNodes.length) {
+        mutation.addedNodes.forEach(node => {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            const htmlContent = node.innerHTML;
+            console.debug('Inspecting added node:', node);
+            if (isSuspicious(htmlContent)) {
+              console.warn('Potential XSS detected in added node:', node);
+            }
+          }
+        });
+      }
+    });
+  });
+
+  // Start observing the document body for added nodes
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+
+  // Monitor user inputs for suspicious patterns
+  document.addEventListener('input', event => {
+    const target = event.target;
+    if (target && target.value && typeof target.value === 'string') {
+      console.debug('User input detected:', target.value);
+      if (isSuspicious(target.value)) {
+        console.warn('Potential XSS detected in user input:', target);
+      }
+    }
+  });
+
+  console.log('XSS Detector initialized with enhanced debugging.');
+})();
