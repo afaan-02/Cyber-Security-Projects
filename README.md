@@ -4,7 +4,7 @@ Welcome to my cybersecurity repository! This collection contains hands-on projec
 
 ## 📂 Repository Structure
 Cybersecurity-projects/
-├── README.md
+├README.md
 ├── Network-Security/
 ├── Web-Security/
 ├── Cryptography/
