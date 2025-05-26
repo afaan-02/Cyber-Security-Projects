@@ -11,7 +11,7 @@ Cybersecurity-projects/
 | Forensics
 | Malware-Analysis
 | Reports
-| Tools|
+| Tools |
 
  🔧 Categories and Sample Projects
 
