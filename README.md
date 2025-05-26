@@ -68,7 +68,7 @@ Run `pip install -r requirements.txt` if a subfolder includes one.
 
  👨‍💻 Author
 
-Maintained by **[Your Name]**, aspiring cybersecurity professional and lifelong learner.
+Maintained by **Afaan Momin**, aspiring cybersecurity professional and lifelong learner.
 
 Feel free to fork, contribute, or reach out with suggestions!
 
