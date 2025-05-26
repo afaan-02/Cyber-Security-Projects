@@ -29,7 +29,6 @@ Cybersecurity-projects/
 
  🔹 Digital Forensics
 - `metadata-extractor.py`: Extract EXIF and metadata from files
-- `steganography-decoder.py`: LSB stego decoder for PNG images
 
  🔹 Malware Analysis
 - `static-analysis/`: Tools for analyzing file hashes, strings, and headers
@@ -37,11 +36,6 @@ Cybersecurity-projects/
 
  🔹 Tools
 - `password-cracker.py`: Brute-force cracker for ZIP or PDF files
-- `keylogger.py`: Educational keylogger with disclaimer
-
- 🔹 Reports & Writeups
-- `vulnerability-report-template.md`: CVSS-based security report format
-- `CTF-writeups/`: Solutions and notes from TryHackMe, HackTheBox, and more
 
 ---
 
