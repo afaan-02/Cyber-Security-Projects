@@ -6,12 +6,12 @@ Welcome to my cybersecurity repository! This collection contains hands-on projec
 Cybersecurity-projects/
 |README.md
 |Network-Security
-|Web-Security/
-|Cryptography/
-|Forensics/
-|Malware-Analysis/
-|Reports/
-|Tools/
+|Web-Security
+|Cryptography
+|Forensics
+|Malware-Analysis
+|Reports
+|Tools
 
  🔧 Categories and Sample Projects
 
